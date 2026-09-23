@@ -1,0 +1,23 @@
+{
+  "name": "vistone-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт VISTONE — каталог крупноформатных ультратонких плит с админкой",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.4.0"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.34.5"
+  }
+}

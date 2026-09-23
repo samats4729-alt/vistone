@@ -1,0 +1,5 @@
+# Замените vistone.kz на свой домен. Сертификат HTTPS Caddy получит сам.
+vistone.kz, www.vistone.kz {
+	encode gzip
+	reverse_proxy app:3000
+}

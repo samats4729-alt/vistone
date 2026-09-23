@@ -1,0 +1,2661 @@
+{
+ "version": 1,
+ "settings": {
+  "siteName": "VISTONE",
+  "tagline": "Крупноформатные ультратонкие плиты",
+  "city": "Алматы",
+  "seo": {
+   "title": "VISTONE — крупноформатные ультратонкие плиты в Алматы",
+   "description": "Каталог ультратонких каменных плит VISTONE: форматы до 1200×3600 мм, толщина 3–6 мм. Цены, наличие и сроки для дизайнеров и архитекторов."
+  },
+  "hero": {
+   "title": "Плита размером со стену толщиной в три миллиметра",
+   "subtitle": "Каталог для дизайнеров и архитекторов: фактура, характеристики, цена, наличие и сроки — сразу, без запроса прайса.",
+   "image": "/uploads/hero.jpg"
+  },
+  "about": {
+   "title": "Что такое VISTONE",
+   "text": "VISTONE — ультратонкие каменные плиты крупного формата. Одна плита закрывает стену без швов, весит в разы меньше натурального камня и монтируется поверх существующей отделки.",
+   "points": [
+    {
+     "title": "Крупный формат",
+     "text": "До 1200 × 3600 мм — стена от пола до потолка одной плитой, без швов."
+    },
+    {
+     "title": "Ультратонкие материалы",
+     "text": "Толщина 3–6 мм. Лёгкая плита монтируется поверх старой отделки, без демонтажа."
+    },
+    {
+     "title": "Фактуры и современные коллекции",
+     "text": "Мрамор, камень, дерево, песчаник, металл и однотонные цвета — семь серий."
+    },
+    {
+     "title": "Для дизайнеров и архитекторов",
+     "text": "Образцы, расчёт раскладки, проверка наличия и бонус за каждый проект."
+    }
+   ]
+  },
+  "applications": [
+   "Фасады и наружные стены",
+   "Стены в интерьере",
+   "Мебель на заказ",
+   "Ванные комнаты",
+   "Дверные панели",
+   "Столешницы и обеденные столы",
+   "Кухни",
+   "Ступени лестниц"
+  ],
+  "designers": {
+   "title": "Дизайнерам и архитекторам",
+   "text": "Не просто продажа — сопровождение проекта от подбора материала до доставки на объект.",
+   "points": [
+    {
+     "title": "Персональное сопровождение проекта",
+     "text": "Один специалист ведёт ваш проект от первого сообщения до доставки."
+    },
+    {
+     "title": "Подбор материалов",
+     "text": "Подберём коллекции под референс, бюджет и сроки и предложим альтернативы."
+    },
+    {
+     "title": "Образцы",
+     "text": "Выдадим образцы вам или сразу клиенту на согласование."
+    },
+    {
+     "title": "Помощь с расчётом",
+     "text": "Посчитаем раскладку по чертежу: количество плит, подрез, стыки."
+    },
+    {
+     "title": "Проверка наличия",
+     "text": "Проверим фактический остаток и забронируем объём под ваш проект."
+    },
+    {
+     "title": "Информация по срокам",
+     "text": "Скажем, когда материал будет на складе и когда его можно забрать."
+    },
+    {
+     "title": "Специальные условия",
+     "text": "Партнёрские цены для дизайнеров и архитекторов."
+    },
+    {
+     "title": "Бонусы за проекты",
+     "text": "Бонус от суммы каждого реализованного проекта."
+    }
+   ]
+  },
+  "process": {
+   "title": "Как проходит работа",
+   "steps": [
+    {
+     "title": "Проект",
+     "text": "Присылаете планировку, визуализации или референс."
+    },
+    {
+     "title": "Подбор материала",
+     "text": "Предлагаем коллекции под задачу и бюджет."
+    },
+    {
+     "title": "Образцы",
+     "text": "Передаём образцы вам или клиенту."
+    },
+    {
+     "title": "Расчёт",
+     "text": "Считаем количество плит с подрезом и стоимость."
+    },
+    {
+     "title": "Проверка наличия",
+     "text": "Подтверждаем остаток и бронируем объём."
+    },
+    {
+     "title": "Заказ",
+     "text": "Фиксируем цену и сроки, оформляем заказ."
+    },
+    {
+     "title": "Доставка",
+     "text": "Привозим на объект и принимаем по количеству."
+    }
+   ]
+  },
+  "developers": {
+   "title": "ЖК и застройщикам",
+   "text": "Коммерческое предложение на комплектацию объектов: партия материала по графику строительства, фиксированная цена и единая спецификация.",
+   "audiences": [
+    "ЖК",
+    "Дизайнеры при комплектации объектов",
+    "Архитекторы",
+    "Застройщики"
+   ],
+   "points": [
+    "Цена под объём партии и фиксация на срок строительства",
+    "Поставки по графику — по очередям и этажам",
+    "Резерв артикула на объект: вся партия одного тона",
+    "Единая спецификация по типам квартир",
+    "Образцы для отдела продаж и шоурума ЖК",
+    "Рекомендации подрядчику по резке и монтажу"
+   ]
+  },
+  "contacts": {
+   "managers": [
+    {
+     "name": "Баян",
+     "role": "Специалист по работе с дизайнерами и архитекторами",
+     "phone": "",
+     "whatsapp": ""
+    },
+    {
+     "name": "Руслан",
+     "role": "Менеджер VISTONE",
+     "phone": "",
+     "whatsapp": ""
+    },
+    {
+     "name": "Тимур",
+     "role": "Менеджер VISTONE",
+     "phone": "",
+     "whatsapp": ""
+    }
+   ],
+   "showroom": "Богенбай батыра, 80",
+   "hours": "",
+   "instagram": "vistone.kz",
+   "mapUrl": ""
+  },
+  "defaults": {
+   "country": "",
+   "factory": "",
+   "composition": "",
+   "specs": []
+  },
+  "calc": {
+   "designerBonus": 10,
+   "defaultWaste": 10,
+   "lowStock": 30
+  }
+ },
+ "series": [
+  {
+   "id": "premium",
+   "name": "Премиум",
+   "nameEn": "Premium Series",
+   "description": "Редкие породы со всего мира под нанокристаллическим глазурным слоем. Рисунок нанесён с высокой точностью методом резьбы и формовки.",
+   "image": "",
+   "order": 0
+  },
+  {
+   "id": "protolith",
+   "name": "Первичный камень",
+   "nameEn": "Protolith Series",
+   "description": "Нетронутая красота и дикая текстура природного камня — без его хрупкости и сложного ухода.",
+   "image": "",
+   "order": 1
+  },
+  {
+   "id": "wood",
+   "name": "Древесная",
+   "nameEn": "Wood Grain Series",
+   "description": "Древесный рисунок, воссозданный высокоточным сканированием. Наноглазурь защищает поверхность от высоких температур и царапин.",
+   "image": "",
+   "order": 2
+  },
+  {
+   "id": "sandstone",
+   "name": "Песочная",
+   "nameEn": "Sandstone Series",
+   "description": "Слоистая текстура и зернистость песчаника в масштабе 1:1 — технология высокоточной цифровой печати.",
+   "image": "",
+   "order": 3
+  },
+  {
+   "id": "spotted",
+   "name": "Сквозная пятнистая",
+   "nameEn": "Through-body Speckled Series",
+   "description": "Минеральные вкрапления проходят сквозь всю плиту: при резке и фаске рисунок сохраняется.",
+   "image": "",
+   "order": 4
+  },
+  {
+   "id": "metal",
+   "name": "Металлическая",
+   "nameEn": "Metal Series",
+   "description": "Индустриальная эстетика металла на ультратонкой плите — без веса и сложного монтажа металлического декора.",
+   "image": "",
+   "order": 5
+  },
+  {
+   "id": "solid",
+   "name": "Однотонная",
+   "nameEn": "Solid Color Series",
+   "description": "Ровный плотный цвет по всей плите — для современных интерьеров и мебели.",
+   "image": "",
+   "order": 6
+  }
+ ],
+ "products": [
+  {
+   "id": "lime-stone-off-white",
+   "slug": "lime-stone-off-white",
+   "name": "Lime Stone Off-White",
+   "article": "MLM32025PB03MS",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/lime-stone-off-white.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 0
+  },
+  {
+   "id": "lime-stone-beige",
+   "slug": "lime-stone-beige",
+   "name": "Lime Stone Beige",
+   "article": "MLM32027PB03MS",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/lime-stone-beige.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 1
+  },
+  {
+   "id": "fano-off-white",
+   "slug": "fano-off-white",
+   "name": "Fano Off-White",
+   "article": "MFN28001PB03MD",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/fano-off-white.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 2
+  },
+  {
+   "id": "fano-light-gray",
+   "slug": "fano-light-gray",
+   "name": "Fano Light Gray",
+   "article": "MFN30002PB03MX",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/fano-light-gray.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 3
+  },
+  {
+   "id": "marseille-off-white",
+   "slug": "marseille-off-white",
+   "name": "Marseille Off-White",
+   "article": "MS1236028PB03M",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/marseille-off-white.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 4
+  },
+  {
+   "id": "marseille-khaki",
+   "slug": "marseille-khaki",
+   "name": "Marseille Khaki",
+   "article": "MS1236029PB03M",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/marseille-khaki.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 5
+  },
+  {
+   "id": "persian-beige",
+   "slug": "persian-beige",
+   "name": "Persian Beige",
+   "article": "MH1323DZ",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/persian-beige.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 6
+  },
+  {
+   "id": "portland-beige",
+   "slug": "portland-beige",
+   "name": "Portland Beige",
+   "article": "MBLT30001PB03MX",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/portland-beige.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 7
+  },
+  {
+   "id": "huizhou-inkstone",
+   "slug": "huizhou-inkstone",
+   "name": "Huizhou Inkstone",
+   "article": "A3Y024ZHO3MS",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Зелёный",
+   "finish": "Формованная",
+   "body": "Серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Серая (Medium grey)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/huizhou-inkstone.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 8
+  },
+  {
+   "id": "paul-limestone",
+   "slug": "paul-limestone",
+   "name": "Paul Limestone",
+   "article": "A3Y20MX",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Чёрный",
+   "finish": "Формованная",
+   "body": "Серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Серая (Medium grey)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/paul-limestone.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 9
+  },
+  {
+   "id": "beijing-brick-light-grey",
+   "slug": "beijing-brick-light-grey",
+   "name": "Beijing Brick Light Grey",
+   "article": "MJD12364027PB03M",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Серая (Medium grey)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/beijing-brick-light-grey.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 10
+  },
+  {
+   "id": "green-shadow-fairy-trace",
+   "slug": "green-shadow-fairy-trace",
+   "name": "Green Shadow Fairy Trace",
+   "article": "MR32003SLG03P",
+   "seriesId": "premium",
+   "type": "Камень",
+   "color": "Чёрный",
+   "finish": "Формованная",
+   "body": "Зелёная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Зелёная (Pine green body)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/green-shadow-fairy-trace.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 11
+  },
+  {
+   "id": "terrazzo",
+   "slug": "terrazzo",
+   "name": "Terrazzo",
+   "article": "SMG123606PB03M",
+   "seriesId": "premium",
+   "type": "Терраццо",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/terrazzo.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 12
+  },
+  {
+   "id": "bianco-carrara-venato",
+   "slug": "bianco-carrara-venato",
+   "name": "Bianco Carrara Venato",
+   "article": "MSN32509PB06MS",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Белый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/bianco-carrara-venato.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 13
+  },
+  {
+   "id": "snowy-alaska-surface",
+   "slug": "snowy-alaska-surface",
+   "name": "Snowy Alaska Surface",
+   "article": "A3Y047CBX",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Белый",
+   "finish": "Тонкая матовая",
+   "body": "Ультрабелая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Ультрабелая (Ultra white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/snowy-alaska-surface.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 14
+  },
+  {
+   "id": "yellow-wood-grain-c-pr",
+   "slug": "yellow-wood-grain-c-pr",
+   "name": "Yellow Wood Grain C",
+   "article": "MJA12365003PB03M",
+   "seriesId": "protolith",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (Mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-wood-grain-c-pr.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 15
+  },
+  {
+   "id": "shaanna",
+   "slug": "shaanna",
+   "name": "Shaanna",
+   "article": "SAN13001PB03PS",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Бежевый",
+   "finish": "Гладкая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (Plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/shaanna.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 16
+  },
+  {
+   "id": "alpine-vein-texture",
+   "slug": "alpine-vein-texture",
+   "name": "Alpine Vein Texture",
+   "article": "MK80QHX",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Серый",
+   "finish": "Тонкая матовая",
+   "body": "Светло-серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Светло-серая (Light gray)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/alpine-vein-texture.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 17
+  },
+  {
+   "id": "salorant",
+   "slug": "salorant",
+   "name": "Salorant",
+   "article": "XY094SH03M",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Чёрный",
+   "finish": "Формованная",
+   "body": "Чёрная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Чёрная (black)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/salorant.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 18
+  },
+  {
+   "id": "blackroot-marble",
+   "slug": "blackroot-marble",
+   "name": "Blackroot Marble",
+   "article": "BW3051HS03PX",
+   "seriesId": "protolith",
+   "type": "Мрамор",
+   "color": "Чёрный",
+   "finish": "Состаренная",
+   "body": "Чёрная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Состаренная (Archaized surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Чёрная (black)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/blackroot-marble.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 19
+  },
+  {
+   "id": "basalt-black-quartz",
+   "slug": "basalt-black-quartz",
+   "name": "Basalt Black Quartz",
+   "article": "MR3603SH03M",
+   "seriesId": "protolith",
+   "type": "Камень",
+   "color": "Чёрный",
+   "finish": "Формованная",
+   "body": "Тёмно-серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Тёмно-серая (Dark gray)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/basalt-black-quartz.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 20
+  },
+  {
+   "id": "light-tan",
+   "slug": "light-tan",
+   "name": "Light Tan",
+   "article": "MJS3027QT03P",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Белый",
+   "finish": "Гладкая",
+   "body": "Светло-песочная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Светло-песочная (Shallow camel blank)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/light-tan.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 21
+  },
+  {
+   "id": "pine-green",
+   "slug": "pine-green",
+   "name": "Pine Green",
+   "article": "MJS3024SL03P",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Зелёный",
+   "finish": "Гладкая",
+   "body": "Зелёная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Зелёная (Pine green)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/pine-green.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 22
+  },
+  {
+   "id": "sunny-orange",
+   "slug": "sunny-orange",
+   "name": "Sunny Orange",
+   "article": "MJS3022YC03P",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Оранжевый",
+   "finish": "Гладкая",
+   "body": "Жёлтая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Жёлтая (Sunny yellow)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sunny-orange.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 23
+  },
+  {
+   "id": "sandy-terra-cotta",
+   "slug": "sandy-terra-cotta",
+   "name": "Sandy Terra Cotta",
+   "article": "MJS3025ST03NP",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Бежевый",
+   "finish": "Гладкая",
+   "body": "Песочная",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Песочная (Sand ceramic)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sandy-terra-cotta.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 24
+  },
+  {
+   "id": "purple-clay-brown",
+   "slug": "purple-clay-brown",
+   "name": "Purple Clay Brown",
+   "article": "MJS3023ZS03P",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Чёрный",
+   "finish": "Гладкая",
+   "body": "Коричневая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Коричневая (Purple brown)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/purple-clay-brown.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 25
+  },
+  {
+   "id": "ink-stain",
+   "slug": "ink-stain",
+   "name": "Ink Stain",
+   "article": "MJS3026ML03P",
+   "seriesId": "solid",
+   "type": "Однотонный",
+   "color": "Чёрный",
+   "finish": "Гладкая",
+   "body": "Графитовая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гладкая (plane)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Графитовая (Ink stain)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/ink-stain.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 26
+  },
+  {
+   "id": "yellow-wood-grain-a",
+   "slug": "yellow-wood-grain-a",
+   "name": "Yellow Wood Grain A",
+   "article": "WH1236001MH03P",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Тонкая матовая",
+   "body": "Рисовая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Рисовая (Rice yellow)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-wood-grain-a.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 27
+  },
+  {
+   "id": "yellow-wood-grain-b",
+   "slug": "yellow-wood-grain-b",
+   "name": "Yellow Wood Grain B",
+   "article": "MHMW3002MH03PX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Гранулированная",
+   "body": "Рисовая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гранулированная (Granule)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Рисовая (Rice yellow)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-wood-grain-b.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 28
+  },
+  {
+   "id": "yellow-wood-grain-c",
+   "slug": "yellow-wood-grain-c",
+   "name": "Yellow Wood Grain C",
+   "article": "WH1236003MH03F",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Наноглазурь",
+   "body": "Рисовая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Наноглазурь (Nano Dry Glaze)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Рисовая (Rice yellow)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-wood-grain-c.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 29
+  },
+  {
+   "id": "toona-original-grain",
+   "slug": "toona-original-grain",
+   "name": "Toona Original Grain",
+   "article": "MWH36003MH03PD",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Наноглазурь",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Наноглазурь (Nano Dry Glaze)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/toona-original-grain.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 30
+  },
+  {
+   "id": "ebony-stripe-a",
+   "slug": "ebony-stripe-a",
+   "name": "Ebony Stripe Texture A",
+   "article": "MH25CBXM-A",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Коричневый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/ebony-stripe-a.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 31
+  },
+  {
+   "id": "ebony-stripe-b",
+   "slug": "ebony-stripe-b",
+   "name": "Ebony Stripe Texture B",
+   "article": "MH25CBXM-B",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Коричневый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/ebony-stripe-b.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 32
+  },
+  {
+   "id": "ebony-stripe-c",
+   "slug": "ebony-stripe-c",
+   "name": "Ebony Stripe Texture C",
+   "article": "MH26CBXM",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Коричневый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/ebony-stripe-c.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 33
+  },
+  {
+   "id": "albert-oak-finish",
+   "slug": "albert-oak-finish",
+   "name": "Albert Oak Finish",
+   "article": "MABT27615PB03PX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Серый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/albert-oak-finish.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 34
+  },
+  {
+   "id": "sapele-grain-texture",
+   "slug": "sapele-grain-texture",
+   "name": "Sapele Grain Texture",
+   "article": "MH018CBXM",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Белый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sapele-grain-texture.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 35
+  },
+  {
+   "id": "smoky-blue-pine",
+   "slug": "smoky-blue-pine",
+   "name": "Smoky Blue Pine",
+   "article": "MH068QHX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Серый",
+   "finish": "Гранулированная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Гранулированная (Granule)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/smoky-blue-pine.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 36
+  },
+  {
+   "id": "yellow-wood-grain-c2",
+   "slug": "yellow-wood-grain-c2",
+   "name": "Yellow Wood Grain C",
+   "article": "MH30CBXM",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Серый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-wood-grain-c2.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 37
+  },
+  {
+   "id": "rosewood-veneer-a",
+   "slug": "rosewood-veneer-a",
+   "name": "Rosewood Veneer A",
+   "article": "MH113CBX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Белый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rosewood-veneer-a.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 38
+  },
+  {
+   "id": "rosewood-veneer-b",
+   "slug": "rosewood-veneer-b",
+   "name": "Rosewood Veneer B",
+   "article": "MH114CBX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rosewood-veneer-b.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 39
+  },
+  {
+   "id": "rosewood-veneer-c",
+   "slug": "rosewood-veneer-c",
+   "name": "Rosewood Veneer C",
+   "article": "MH115CBX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Тонкая матовая",
+   "body": "Серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Серая (Medium grey)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rosewood-veneer-c.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 40
+  },
+  {
+   "id": "rosewood-veneer-d",
+   "slug": "rosewood-veneer-d",
+   "name": "Rosewood Veneer D",
+   "article": "MH116CBX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rosewood-veneer-d.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 41
+  },
+  {
+   "id": "rosewood-veneer-e",
+   "slug": "rosewood-veneer-e",
+   "name": "Rosewood Veneer E",
+   "article": "MH117CBX",
+   "seriesId": "wood",
+   "type": "Дерево",
+   "color": "Бежевый",
+   "finish": "Тонкая матовая",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rosewood-veneer-e.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 42
+  },
+  {
+   "id": "spotted-white",
+   "slug": "spotted-white",
+   "name": "Spotted White",
+   "article": "",
+   "seriesId": "spotted",
+   "type": "Пятнистый",
+   "color": "Белый",
+   "finish": "Формованная",
+   "body": "",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/spotted-white.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 43
+  },
+  {
+   "id": "spotted-beige",
+   "slug": "spotted-beige",
+   "name": "Spotted Beige",
+   "article": "",
+   "seriesId": "spotted",
+   "type": "Пятнистый",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Пятнистая бежевая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Пятнистая бежевая (Spotted beige)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/spotted-beige.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 44
+  },
+  {
+   "id": "spotted-lighting-gray",
+   "slug": "spotted-lighting-gray",
+   "name": "Spotted Lighting Gray",
+   "article": "",
+   "seriesId": "spotted",
+   "type": "Пятнистый",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Пятнистая серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Пятнистая серая (Spotted grey)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/spotted-lighting-gray.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 45
+  },
+  {
+   "id": "spotted-black",
+   "slug": "spotted-black",
+   "name": "Spotted Black",
+   "article": "",
+   "seriesId": "spotted",
+   "type": "Пятнистый",
+   "color": "Чёрный",
+   "finish": "Формованная",
+   "body": "Пятнистая бежевая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Пятнистая бежевая (Spotted beige)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/spotted-black.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 46
+  },
+  {
+   "id": "sandstone-white",
+   "slug": "sandstone-white",
+   "name": "Sandstone White",
+   "article": "WSCB03M",
+   "seriesId": "sandstone",
+   "type": "Песчаник",
+   "color": "Бежевый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sandstone-white.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 47
+  },
+  {
+   "id": "sandstone-grey",
+   "slug": "sandstone-grey",
+   "name": "Sandstone Grey",
+   "article": "GSQH03M",
+   "seriesId": "sandstone",
+   "type": "Песчаник",
+   "color": "Белый",
+   "finish": "Формованная",
+   "body": "Светло-серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Светло-серая (Light gray)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sandstone-grey.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 48
+  },
+  {
+   "id": "desert",
+   "slug": "desert",
+   "name": "Desert",
+   "article": "MTP27007MH06MS",
+   "seriesId": "sandstone",
+   "type": "Песчаник",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plain white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/desert.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 49
+  },
+  {
+   "id": "sandstone-black",
+   "slug": "sandstone-black",
+   "name": "Sandstone Black",
+   "article": "HSSH03M",
+   "seriesId": "sandstone",
+   "type": "Песчаник",
+   "color": "Серый",
+   "finish": "Формованная",
+   "body": "Тёмно-серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Формованная (mould)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Тёмно-серая (Dark gray)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/sandstone-black.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 50
+  },
+  {
+   "id": "white-rust",
+   "slug": "white-rust",
+   "name": "White Rust",
+   "article": "WX06CB",
+   "seriesId": "metal",
+   "type": "Металл",
+   "color": "Белый",
+   "finish": "Рельефный накат",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Рельефный накат (Rubber roll)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/white-rust.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 51
+  },
+  {
+   "id": "yellow-rust",
+   "slug": "yellow-rust",
+   "name": "Yellow Rust",
+   "article": "HXCB03P",
+   "seriesId": "metal",
+   "type": "Металл",
+   "color": "Бежевый",
+   "finish": "Рельефный накат",
+   "body": "Белая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Рельефный накат (Rubber roll)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Белая (Plane white)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/yellow-rust.jpg"
+   ],
+   "featured": false,
+   "hidden": false,
+   "order": 52
+  },
+  {
+   "id": "rust-stone",
+   "slug": "rust-stone",
+   "name": "Rust Stone",
+   "article": "A3Y065QHX",
+   "seriesId": "metal",
+   "type": "Металл",
+   "color": "Чёрный",
+   "finish": "Тонкая матовая",
+   "body": "Серая",
+   "sizes": [
+    "1200×3600",
+    "1000×3000"
+   ],
+   "thickness": [
+    3,
+    6
+   ],
+   "composition": "",
+   "country": "",
+   "factory": "",
+   "specs": [
+    {
+     "name": "Отделка поверхности",
+     "value": "Тонкая матовая (Fine Matte Surface)"
+    },
+    {
+     "name": "Основа плиты",
+     "value": "Серая (gray)"
+    }
+   ],
+   "description": "",
+   "usage": "",
+   "price": null,
+   "stock": null,
+   "readyIn": "",
+   "leadTime": "",
+   "arrival": "",
+   "images": [
+    "/uploads/rust-stone.jpg"
+   ],
+   "featured": true,
+   "hidden": false,
+   "order": 53
+  }
+ ]
+}

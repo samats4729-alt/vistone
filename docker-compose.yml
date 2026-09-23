@@ -1,0 +1,26 @@
+# Сайт + HTTPS-сертификат для домена. Запуск на сервере: docker compose up -d
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      # Пароль для первого входа в /admin. После входа смените его в админке.
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+    volumes:
+      - vistone_data:/app/data
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - app
+
+volumes:
+  vistone_data:
+  caddy_data:
