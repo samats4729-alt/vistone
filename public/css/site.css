@@ -172,10 +172,10 @@ p { margin: 0; }
 .catalog { display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 80px; }
 @media (min-width: 1000px) { .catalog { grid-template-columns: 260px minmax(0, 1fr); gap: 44px; } }
 .filters { align-self: start; }
-@media (min-width: 1000px) { .filters { position: sticky; top: 92px; max-height: calc(100vh - 110px); overflow: auto; padding-right: 6px; } }
+@media (min-width: 1000px) { .filters { position: sticky; top: 92px; } .filters-scroll { max-height: calc(100vh - 110px); overflow-y: auto; padding-right: 6px; } }
 .filters-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .filters-title { font-weight: 600; font-size: 18px; margin-right: auto; }
-.filters-close, .filters-apply, .filters-open { display: none; }
+.filters-close, .filters-footer, .filters-open, .filters-backdrop { display: none; }
 .fgroup { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 14px 0 16px; }
 .fgroup legend { font-weight: 600; font-size: 15px; padding: 0; margin-bottom: 10px; float: left; width: 100%; }
 .fgroup legend + * { clear: both; }
@@ -187,12 +187,20 @@ p { margin: 0; }
 .range input { width: 100%; min-width: 0; height: 42px; border: 1px solid var(--line-2); border-radius: var(--radius); padding: 0 10px; background: #fff; }
 .range span { color: var(--ink-3); }
 @media (max-width: 999px) {
-  .filters { position: fixed; inset: 0 0 0 auto; width: min(380px, 100%); background: #fff; z-index: 60; overflow: auto; padding: 18px var(--gutter) 96px; transform: translateX(100%); visibility: hidden; transition: transform .25s, visibility 0s linear .25s; }
+  /* Панель фильтров на телефоне: рамка выезжает справа, внутри — отдельный прокручиваемый блок.
+     Так прокрутка работает и в Safari на iPhone. */
+  .filters { position: fixed; top: 0; right: 0; bottom: 0; left: auto; z-index: 60; width: min(400px, 100%); height: 100%; height: 100dvh;
+    display: flex; flex-direction: column; background: #fff; transform: translateX(100%); visibility: hidden;
+    transition: transform .25s, visibility 0s linear .25s; }
   .filters.is-open { transform: none; visibility: visible; transition: transform .25s; box-shadow: -20px 0 40px rgba(0,0,0,.12); }
+  .filters-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 18px var(--gutter) 24px; }
+  .filters-footer { display: block; flex: none; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: #fff; }
+  .filters-apply { width: 100%; }
   .filters-close { display: grid; }
-  .filters-apply { display: flex; position: fixed; left: auto; right: var(--gutter); bottom: 20px; width: calc(min(380px, 100%) - 2 * var(--gutter)); }
-  .filters:not(.is-open) .filters-apply { display: none; }
   .filters-open { display: inline-flex; }
+  .filters-backdrop { position: fixed; inset: 0; z-index: 59; background: rgba(12,12,12,.45); }
+  .filters-backdrop.is-open { display: block; }
+}
 }
 .catalog-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .search { flex: 1 1 260px; min-width: 0; height: 48px; border: 1px solid var(--line-2); border-radius: var(--radius); padding: 0 16px; background: #fff; font-size: 15px; }
@@ -280,13 +288,12 @@ select { height: 48px; border: 1px solid var(--line-2); border-radius: var(--rad
 
 /* ------------------------------------------------------------ окно */
 .modal { position: fixed; inset: 0; z-index: 100; background: rgba(12,12,12,.55); display: flex; align-items: center; justify-content: center; padding: 16px; }
-.modal-box { background: #fff; width: 100%; max-width: 560px; max-height: calc(100vh - 32px); overflow: auto; border-radius: var(--radius); padding: 26px 26px 22px; }
+.modal-box { background: #fff; width: 100%; max-width: 560px; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; border-radius: var(--radius); padding: 26px 26px 22px; }
 .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
 .modal-head h2 { font-size: 34px; }
 .modal-close { width: 40px; height: 40px; flex: none; border: 1px solid var(--line-2); border-radius: var(--radius); background: #fff; font-size: 22px; line-height: 1; cursor: pointer; place-items: center; }
 .modal-lead { color: var(--ink-2); margin-top: 8px; }
 .modal-foot { color: var(--ink-3); font-size: 14px; margin-top: 12px; }
-body.no-scroll { overflow: hidden; }
 
 /* ------------------------------------------------------------ подвал */
 .site-footer { background: var(--dark); color: rgba(255,255,255,.72); padding-block: 48px 56px; font-size: 15px; }

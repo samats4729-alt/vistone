@@ -10,6 +10,23 @@
   function plural(n, f) { var a = n % 100, b = n % 10; return a > 10 && a < 20 ? f[2] : b === 1 ? f[0] : b > 1 && b < 5 ? f[1] : f[2]; }
   var pageData = (function () { var el = $('#page-data'); try { return el ? JSON.parse(el.textContent) : null; } catch (e) { return null; } })();
 
+  /* Блокировка прокрутки страницы под окном. overflow:hidden в Safari на iPhone не работает,
+     поэтому страница фиксируется на месте и после закрытия возвращается туда же. */
+  var lockY = 0, locks = 0;
+  function lockScroll() {
+    if (locks++ > 0) return;
+    lockY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var b = document.body.style;
+    b.position = 'fixed'; b.top = (-lockY) + 'px'; b.left = '0'; b.right = '0'; b.width = '100%';
+  }
+  function unlockScroll() {
+    if (locks === 0) return;
+    if (--locks > 0) return;
+    var b = document.body.style;
+    b.position = ''; b.top = ''; b.left = ''; b.right = ''; b.width = '';
+    window.scrollTo(0, lockY);
+  }
+
   /* ---------------------------------------------------------- меню */
   var burger = $('.burger'), nav = $('#nav');
   if (burger && nav) {
@@ -25,13 +42,13 @@
     if (!modal) return;
     lastFocus = document.activeElement;
     modal.hidden = false;
-    document.body.classList.add('no-scroll');
+    lockScroll();
     var c = $('[data-close]', modal); if (c) c.focus();
   }
   function closeModal() {
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    document.body.classList.remove('no-scroll');
+    unlockScroll();
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   document.addEventListener('click', function (e) {
@@ -43,9 +60,25 @@
 
   /* ---------------------------------------------------------- каталог */
   var grid = $('#grid'), form = $('#filter-form');
-  var filters = $('#filters');
-  function openFilters() { if (filters) { filters.classList.add('is-open'); document.body.classList.add('no-scroll'); } }
-  function closeFilters() { if (filters && filters.classList.contains('is-open')) { filters.classList.remove('is-open'); document.body.classList.remove('no-scroll'); } }
+  var filters = $('#filters'), backdrop = $('.filters-backdrop');
+  function openFilters() {
+    if (!filters || filters.classList.contains('is-open')) return;
+    filters.classList.add('is-open');
+    if (backdrop) backdrop.classList.add('is-open');
+    lockScroll();
+    var sc = $('.filters-scroll', filters); if (sc) sc.scrollTop = 0;
+  }
+  function closeFilters() {
+    if (!filters || !filters.classList.contains('is-open')) return;
+    filters.classList.remove('is-open');
+    if (backdrop) backdrop.classList.remove('is-open');
+    unlockScroll();
+  }
+  if (window.matchMedia) {
+    var wide = window.matchMedia('(min-width: 1000px)');
+    var onWide = function () { if (wide.matches) closeFilters(); };
+    if (wide.addEventListener) wide.addEventListener('change', onWide); else if (wide.addListener) wide.addListener(onWide);
+  }
 
   if (grid && form) {
     var cards = $$('.card', grid);

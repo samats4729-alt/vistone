@@ -228,7 +228,9 @@ function catalog(data, query) {
 </section>
 
 <div class="wrap catalog">
+  <div class="filters-backdrop" data-filters-close></div>
   <aside class="filters" id="filters" aria-label="Фильтры">
+    <div class="filters-scroll">
     <div class="filters-head">
       <p class="filters-title">Фильтры</p>
       <button class="link-btn" type="button" data-reset>Сбросить</button>
@@ -256,7 +258,8 @@ function catalog(data, query) {
             </div>`}
       </fieldset>
     </form>
-    <button class="btn btn-primary filters-apply" type="button" data-filters-close>Показать</button>
+    </div>
+    <div class="filters-footer"><button class="btn btn-primary filters-apply" type="button" data-filters-close>Показать</button></div>
   </aside>
 
   <div class="catalog-main">
