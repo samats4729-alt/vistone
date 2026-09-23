@@ -9,10 +9,9 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY . .
-RUN mkdir -p /app/data && chown -R node:node /app/data
-USER node
+RUN mkdir -p /app/data
 
-VOLUME ["/app/data"]
+# Постоянный диск подключается к /app/data средствами хостинга:
+# на Railway — Volume с путём /app/data, в docker-compose — том vistone_data.
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD wget -qO- http://127.0.0.1:3000/robots.txt >/dev/null || exit 1
 CMD ["node", "server.js"]
