@@ -4,6 +4,7 @@ const { esc, digits } = require('../util');
 
 const NAV = [
   ['/catalog', 'Каталог'],
+  ['/combine', 'Сочетания'],
   ['/calculator', 'Калькулятор'],
   ['/stock', 'Наличие и сроки'],
   ['/designers', 'Дизайнерам'],
@@ -104,7 +105,7 @@ function footer(settings) {
 // Меняется при каждом запуске сервера — браузеры подхватывают новые стили и скрипты после обновления сайта.
 const V = Date.now().toString(36);
 
-function page({ base, settings, title, description, path, body, active, image, jsonData }) {
+function page({ base, settings, title, description, path, body, active, image, jsonData, scripts }) {
   const abs = (u) => { try { return u && base ? new URL(u, base).href : u; } catch { return u; } };
   const fullTitle = title ? `${title} — ${settings.siteName}` : (settings.seo && settings.seo.title) || settings.siteName;
   const desc = description || (settings.seo && settings.seo.description) || settings.tagline;
@@ -134,6 +135,7 @@ ${body}
 ${footer(settings)}
 ${contactModal(settings)}
 ${jsonData ? `<script type="application/json" id="page-data">${JSON.stringify(jsonData).replace(/</g, '\\u003c')}</script>` : ''}
+${(scripts || []).map((src) => `<script src="/assets/js/${src}?v=${V}" defer></script>`).join('\n')}
 <script src="/assets/js/site.js?v=${V}" defer></script>
 </body>
 </html>`;

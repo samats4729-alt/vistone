@@ -7,6 +7,7 @@ const express = require('express');
 const store = require('./src/store');
 const auth = require('./src/auth');
 const images = require('./src/images');
+const palette = require('./src/palette');
 const pages = require('./src/render/pages');
 const { V } = require('./src/render/layout');
 const fs = require('fs');
@@ -18,6 +19,10 @@ function createApp() {
 
   const app = express();
   app.disable('x-powered-by');
+  // Цвета плит для подбора сочетаний: досчитываются в фоне для коллекций, где их ещё нет.
+  app.locals.ready = palette.backfill(store)
+    .then((n) => { if (n) console.log(`Подбор сочетаний: определены цвета ${n} коллекций по фото`); })
+    .catch((e) => console.error('Подбор сочетаний:', e));
   app.set('trust proxy', 1);
 
   app.use((req, res, next) => {
@@ -44,6 +49,7 @@ function createApp() {
     html(res, out);
   });
   app.get('/calculator', (req, res) => html(res, pages.calculator(view(req), req.query)));
+  app.get('/combine', (req, res) => html(res, pages.combine(view(req), req.query)));
   app.get('/stock', (req, res) => html(res, pages.stock(view(req), req.query)));
   app.get('/designers', (req, res) => html(res, pages.designers(view(req))));
   app.get('/developers', (req, res) => html(res, pages.developers(view(req))));
@@ -55,7 +61,7 @@ function createApp() {
   });
   app.get('/sitemap.xml', (req, res) => {
     const base = `${req.protocol}://${req.get('host')}`;
-    const urls = ['/', '/catalog', '/calculator', '/stock', '/designers', '/developers', '/contacts',
+    const urls = ['/', '/catalog', '/combine', '/calculator', '/stock', '/designers', '/developers', '/contacts',
       ...store.publicView().products.map((p) => `/catalog/${p.slug}`)];
     res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -131,11 +137,11 @@ ${urls.map((u) => `  <url><loc>${base}${encodeURI(u)}</loc></url>`).join('\n')}
     try {
       const db = store.get();
       const clean = cleanProduct(req.body || {}, db, null);
-      const product = {
+      const product = await palette.ensure({
         id: crypto.randomBytes(6).toString('hex'),
         ...clean,
         order: clean.order || db.products.reduce((m, p) => Math.max(m, p.order || 0), 0) + 1,
-      };
+      });
       await store.update((d) => { d.products.push(product); });
       res.status(201).json({ product });
     } catch (e) { next(e); }
@@ -147,7 +153,7 @@ ${urls.map((u) => `  <url><loc>${base}${encodeURI(u)}</loc></url>`).join('\n')}
       const before = db.products.find((p) => p.id === req.params.id);
       if (!before) return res.status(404).json({ error: 'Коллекция не найдена' });
       const clean = cleanProduct({ ...before, ...(req.body || {}) }, db, before.id);
-      const product = { ...before, ...clean };
+      const product = await palette.ensure({ ...before, ...clean });
       await store.update((d) => {
         const i = d.products.findIndex((p) => p.id === before.id);
         d.products[i] = product;
@@ -187,7 +193,7 @@ ${urls.map((u) => `  <url><loc>${base}${encodeURI(u)}</loc></url>`).join('\n')}
       const src = db.products.find((p) => p.id === req.params.id);
       if (!src) return res.status(404).json({ error: 'Коллекция не найдена' });
       const clean = cleanProduct({ ...src, name: `${src.name} (копия)`, slug: '', hidden: true }, db, null);
-      const product = { id: crypto.randomBytes(6).toString('hex'), ...clean, order: (src.order || 0) + 1 };
+      const product = await palette.ensure({ id: crypto.randomBytes(6).toString('hex'), ...clean, order: (src.order || 0) + 1 });
       await store.update((d) => { d.products.push(product); });
       res.status(201).json({ product });
     } catch (e) { next(e); }
@@ -210,6 +216,13 @@ ${urls.map((u) => `  <url><loc>${base}${encodeURI(u)}</loc></url>`).join('\n')}
       const urls = [];
       for (const f of files) urls.push(await images.saveImage(f.buffer));
       res.json({ urls });
+    } catch (e) { next(e); }
+  });
+
+  /** Цвет по фото — для предпросмотра в админке, пока коллекция не сохранена. */
+  api.post('/palette', async (req, res, next) => {
+    try {
+      res.json({ palette: await palette.analyze(req.body && req.body.url), available: palette.hasSharp });
     } catch (e) { next(e); }
   });
 

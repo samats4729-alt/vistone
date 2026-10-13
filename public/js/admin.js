@@ -190,6 +190,12 @@
     }
     draw();
   }
+  var PATTERN_OPTIONS = [
+    ['', 'Авто — по типу материала'],
+    ['calm', 'Спокойный — однотон, почти без рисунка'],
+    ['medium', 'Умеренный — дерево, камень, песчаник'],
+    ['busy', 'Выразительный — мрамор, терраццо, крупные прожилки'],
+  ];
   function normSize(v) {
     var m = String(v).match(/(\d{2,5})\s*[×xх*]\s*(\d{2,5})/i);
     return m ? m[1] + '×' + m[2] : null;
@@ -304,7 +310,7 @@
       name: '', article: '', seriesId: (S.series[0] || {}).id || '', type: '', color: '', finish: '', body: '',
       sizes: ['1200×3600', '1000×3000'], thickness: [3, 6], composition: '', country: '', factory: '', specs: [],
       description: '', usage: '', price: null, stock: null, readyIn: '', leadTime: '', arrival: '',
-      images: [], featured: false, hidden: false, order: 0,
+      images: [], featured: false, hidden: false, order: 0, tone: '', pattern: '',
     };
   }
 
@@ -331,6 +337,17 @@
       '</section>' +
 
       '<section class="panel"><h2>Фото</h2><p class="hint">Первое фото — главное, оно на карточке в каталоге. Можно перетащить файлы на серую рамку. JPG, PNG или WebP до 15 МБ.</p><div class="photos" id="photos"></div></section>' +
+
+      '<section class="panel"><h2>Подбор сочетаний</h2><p class="hint">По этим данным сайт подсказывает, с чем сочетается коллекция: страница «Сочетания» и блок «С чем сочетается» в карточке. ' +
+      'Тон определяется по главному фото сам. Если фото искажает цвет — задайте тон вручную, сверяясь с образцом.</p>' +
+      '<div class="row">' +
+      '<div class="field"><span>Тон по фото</span><div class="tone" id="tone-auto"></div></div>' +
+      '<div class="field"><span>Тон вручную</span><div class="tone"><label class="check"><input type="checkbox" id="tone-on"' + (d.tone ? ' checked' : '') + '> Задать вручную</label>' +
+      '<input type="color" id="tone" aria-label="Тон вручную"' + (d.tone ? '' : ' disabled') + '></div><small class="hint">Используется вместо тона по фото.</small></div>' +
+      '<label class="field"><span>Рисунок</span><select data-k="pattern">' + PATTERN_OPTIONS.map(function (o) {
+        return '<option value="' + o[0] + '"' + ((d.pattern || '') === o[0] ? ' selected' : '') + '>' + esc(o[1]) + '</option>';
+      }).join('') + '</select><small class="hint">Сайт не советует ставить рядом два выразительных рисунка.</small></label>' +
+      '</div></section>' +
 
       '<section class="panel"><h2>Размеры и толщина</h2>' +
       '<div class="field"><span>Размеры, мм</span><div id="sizes"></div><small class="hint">Например, 1200×3600 — площадь плиты посчитается сама.</small></div>' +
@@ -363,6 +380,38 @@
 
     bind(main, d, ['price', 'stock', 'order']);
 
+    // тон для подбора сочетаний
+    var pal = d.palette && d.palette.image === d.images[0] ? d.palette : null;
+    var palFor = pal ? pal.image : null;
+    var toneOn = $('#tone-on'), toneIn = $('#tone');
+    toneIn.value = d.tone || (pal && pal.tone) || '#cccccc';
+    function drawTone() {
+      var box = $('#tone-auto');
+      if (!d.images.length) { box.innerHTML = '<span class="hint">Загрузите фото — тон определится по нему.</span>'; return; }
+      if (!pal) {
+        box.innerHTML = '<span class="hint">' + (S.sharp ? 'Определяю по фото…' : 'На этом сервере тон по фото не определяется — задайте вручную.') + '</span>';
+        return;
+      }
+      box.innerHTML = '<i class="swatch" style="background:' + esc(pal.tone) + '"></i><code>' + esc(pal.tone) + '</code>' +
+        (pal.vein ? '<i class="swatch" style="background:' + esc(pal.vein) + '"></i><span class="hint">цвет рисунка</span>' : '');
+    }
+    function refreshTone() {
+      var img = d.images[0];
+      if (!img || img === palFor || !S.sharp) { if (!img) pal = null; drawTone(); return; }
+      palFor = img; pal = null; drawTone();
+      api('POST', '/api/admin/palette', { url: img }).then(function (r) {
+        if (d.images[0] !== img) return;
+        pal = r.palette; drawTone();
+        if (pal && !d.tone) toneIn.value = pal.tone;
+      }).catch(function () { drawTone(); });
+    }
+    toneOn.addEventListener('change', function () {
+      toneIn.disabled = !toneOn.checked;
+      d.tone = toneOn.checked ? toneIn.value : '';
+      setDirty(true);
+    });
+    toneIn.addEventListener('input', function () { d.tone = toneIn.value; setDirty(true); });
+
     // фото
     var photos = $('#photos');
     function drawPhotos() {
@@ -387,6 +436,7 @@
       drop.ondragover = function (e) { e.preventDefault(); drop.classList.add('over'); };
       drop.ondragleave = function () { drop.classList.remove('over'); };
       drop.ondrop = function (e) { e.preventDefault(); drop.classList.remove('over'); addFiles(e.dataTransfer.files); };
+      refreshTone();
     }
     drawPhotos();
 
@@ -401,6 +451,7 @@
       req.then(function (r) {
         var i = S.products.findIndex(function (p) { return p.id === r.product.id; });
         if (i >= 0) S.products[i] = r.product; else S.products.push(r.product);
+        if (r.product.palette) { pal = r.product.palette; palFor = pal.image; drawTone(); }
         setDirty(false);
         toast(isNew ? 'Коллекция создана' : 'Сохранено');
         if (isNew) go('products', r.product.id);
