@@ -41,6 +41,12 @@ function imageUrl(v) {
   const s = String(v || '');
   return /^\/uploads\/[a-z0-9._-]+$/i.test(s) ? s : '';
 }
+/** Тон для подбора сочетаний, заданный вручную: «#rrggbb» или пусто — тогда по фото. */
+function hex(v) {
+  const s = String(v || '').trim().toLowerCase();
+  return /^#[0-9a-f]{6}$/.test(s) ? s : '';
+}
+const PATTERNS = ['calm', 'medium', 'busy'];
 /** «1200 x 3600», «1200*3600 мм» → «1200×3600». */
 function sizes(v) {
   return strList(v, 12, 40)
@@ -99,6 +105,8 @@ function cleanProduct(input, db, existingId) {
     leadTime: str(input.leadTime, 80),
     arrival: str(input.arrival, 120),
     images: (Array.isArray(input.images) ? input.images : []).map(imageUrl).filter(Boolean).slice(0, 12),
+    tone: hex(input.tone),
+    pattern: PATTERNS.includes(input.pattern) ? input.pattern : '',
     featured: !!input.featured,
     hidden: !!input.hidden,
     order: int(input.order, 0, 0, 100000),

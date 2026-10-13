@@ -67,6 +67,31 @@ const COLOR_SWATCH = {
   'Голубой': '#8FAFC4', 'Синий': '#34506E', 'Жёлтый': '#E0C25A', 'Красный': '#9E3B32',
 };
 
+/**
+ * Данные коллекции для подбора сочетаний (public/js/match.js).
+ * Тон: заданный вручную в админке → посчитанный по главному фото → по названию цвета.
+ */
+function matchItem(p, series) {
+  const pal = p.palette || {};
+  const s = seriesOf(p, series);
+  return {
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    article: p.article || '',
+    series: s ? s.name : '',
+    seriesId: p.seriesId || '',
+    type: p.type || '',
+    finish: p.finish || '',
+    color: p.color || '',
+    img: (p.images && p.images[0]) || '',
+    tone: (p.tone || pal.tone || COLOR_SWATCH[p.color] || '#b9b6ae').toLowerCase(),
+    vein: pal.vein || '',
+    spread: pal.spread || 0,
+    pattern: p.pattern || '',
+  };
+}
+
 function sizesText(p) {
   return (p.sizes || []).map((s) => s.replace('×', ' × ')).join(', ');
 }
@@ -77,4 +102,4 @@ function thicknessText(p) {
   return `${num(t[0])}–${num(t[t.length - 1])} мм`;
 }
 
-module.exports = { effective, availability, seriesOf, facets, COLOR_SWATCH, sizesText, thicknessText };
+module.exports = { effective, availability, seriesOf, facets, COLOR_SWATCH, matchItem, sizesText, thicknessText };

@@ -1,8 +1,9 @@
 'use strict';
 
 const { esc, money, num, plural, sizeArea } = require('../util');
-const { effective, availability, seriesOf, facets, COLOR_SWATCH, sizesText, thicknessText } = require('../catalog');
+const { effective, availability, seriesOf, facets, COLOR_SWATCH, matchItem, sizesText, thicknessText } = require('../catalog');
 const { page, managerCard, waHref, primaryManager } = require('./layout');
+const Match = require('../../public/js/match');
 
 /* ------------------------------------------------------------ общие части */
 
@@ -92,6 +93,37 @@ function crumbs(items) {
   </nav>`;
 }
 
+/** Фон-образец плиты: фото, а пока оно грузится или его нет — тон материала. */
+function tileStyle(it) {
+  return `background-color:${esc(it.tone)}${it.img ? `;background-image:url('${esc(it.img)}')` : ''}`;
+}
+
+function comboHref(list) {
+  return `/combine?m=${list.map((x) => encodeURIComponent(x.slug)).join(',')}`;
+}
+
+/**
+ * Пример удачного сочетания для главной: для каждого материала с выразительным рисунком
+ * (мрамор, терраццо) берутся две лучшие пары, показывается тройка с самой высокой оценкой.
+ */
+function comboExample(products, series) {
+  const all = products.map((p) => matchItem(p, series)).filter((x) => x.img).map(Match.prepare);
+  const anchors = all.filter((x) => x.level === 2);
+  let best = null;
+  for (const anchor of anchors.length ? anchors : all.slice(0, 1)) {
+    const recs = Match.suggest([anchor], all, { limit: 2, perSeries: 1 });
+    if (recs.length < 2) continue;
+    const list = [anchor, ...recs.map((r) => r.item)];
+    const g = Match.group(list);
+    if (!best || g.score > best.g.score) best = { list, g };
+  }
+  if (!best) return null;
+  return {
+    list: Match.roles(best.list).map((r) => ({ ...r.item, role: r.name, share: r.share })),
+    verdict: best.g.verdict,
+  };
+}
+
 /* ------------------------------------------------------------------ главная */
 
 function home(data) {
@@ -119,6 +151,8 @@ function home(data) {
       </a>`;
     })
     .join('');
+
+  const example = comboExample(products, series);
 
   const body = `
 <section class="hero">
@@ -154,6 +188,21 @@ function home(data) {
   ${sectionHead('Популярные материалы', '', '<a class="more-link" href="/catalog">Все материалы →</a>')}
   <div class="grid">${shown.map((p) => card(p, ctx)).join('')}</div>
 </section>
+
+${example ? `<section class="section wrap combo-promo">
+  <div>
+    <h2>Подбор сочетаний</h2>
+    <p class="lead">Выберите несколько плит — сайт покажет их вместе и подскажет, сочетаются ли они по светлоте, подтону, рисунку и фактуре.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/combine">Подобрать сочетание</a>
+      <a class="btn" href="${esc(comboHref(example.list))}">Посмотреть пример</a>
+    </div>
+  </div>
+  <a class="promo-board" href="${esc(comboHref(example.list))}" aria-label="Пример сочетания: ${esc(example.list.map((x) => x.name).join(', '))}">
+    ${example.list.map((x) => `<span class="promo-strip" style="flex-grow:${x.share};${tileStyle(x)}"><span class="promo-label">${esc(x.role)}<b>${esc(x.name)}</b></span></span>`).join('')}
+    <span class="fit fit-${esc(example.verdict.key)} promo-fit">${esc(example.verdict.label)}</span>
+  </a>
+</section>` : ''}
 
 <section class="section band">
   <div class="wrap two-col">
@@ -225,6 +274,7 @@ function catalog(data, query) {
 <section class="page-head wrap">
   <h1>Каталог материалов</h1>
   <p class="lead">Подберите материал по серии, типу, цвету, фактуре, размеру, толщине и цене. У каждой коллекции — характеристики, цена, наличие и сроки.</p>
+  <p class="head-link"><a class="more-link" href="/combine">Подобрать сочетание материалов →</a></p>
 </section>
 
 <div class="wrap catalog">
@@ -382,6 +432,9 @@ function product(data, slug) {
     ...p.specs.filter((x) => !/^основа плиты$/i.test(x.name)).map((x) => [x.name, x.value]),
   ];
   const related = products.filter((x) => x.seriesId === p.seriesId && x.id !== p.id).slice(0, 4);
+  const all = products.map((x) => matchItem(x, series));
+  const me = all.find((x) => x.id === raw.id);
+  const pairs = Match.suggest([me], all, { limit: 4, perSeries: 2 });
   const unknown = 'Уточняйте';
 
   const body = `
@@ -419,6 +472,7 @@ ${crumbs([['/', 'Главная'], ['/catalog', 'Каталог'], ...(s ? [[`/c
     <div class="actions">
       ${waButton(settings, msg, 'Написать по этому материалу')}
       ${waButton(settings, sampleMsg, 'Запросить образец', 'btn')}
+      <a class="btn" href="${esc(comboHref([me]))}">Подобрать сочетание</a>
     </div>
   </div>
 </section>
@@ -442,6 +496,19 @@ ${crumbs([['/', 'Главная'], ['/catalog', 'Каталог'], ...(s ? [[`/c
   </div>
 </section>
 
+${pairs.length ? `<section class="section wrap">
+  ${sectionHead('С чем сочетается', 'Подобрано автоматически по светлоте, подтону, рисунку и фактуре. Нажмите, чтобы посмотреть пару вместе.', `<a class="more-link" href="${esc(comboHref([me]))}">Подобрать своё сочетание →</a>`)}
+  <div class="grid">${pairs.map((r) => `<a class="card pair-card" href="${esc(comboHref([me, r.item]))}">
+    <div class="pair-img"><span style="${tileStyle(me)}"></span><span style="${tileStyle(r.item)}"></span></div>
+    <div class="card-body">
+      ${r.item.series ? `<p class="card-series">${esc(r.item.series)}</p>` : ''}
+      <h3 class="card-title">${esc(r.item.name)}</h3>
+      <p class="card-meta">${esc([r.item.type, r.item.finish].filter(Boolean).join(' · '))}</p>
+      <p class="fit fit-${esc(r.verdict.key)}">${esc(r.verdict.label)}</p>
+    </div>
+  </a>`).join('')}</div>
+</section>` : ''}
+
 ${related.length ? `<section class="section wrap">
   ${sectionHead(`Другие коллекции серии «${s ? s.name : ''}»`, '', s ? `<a class="more-link" href="/catalog?series=${esc(s.id)}">Вся серия →</a>` : '')}
   <div class="grid">${related.map((x) => card(x, { settings, series })).join('')}</div>
@@ -452,6 +519,67 @@ ${related.length ? `<section class="section wrap">
     description: `${p.name}${p.article ? `, артикул ${p.article}` : ''}. ${[p.finish, sizesText(p) && `${sizesText(p)} мм`, thicknessText(p)].filter(Boolean).join(', ')}. ${priceText(p)}. ${a.label}.`,
     path: `/catalog/${p.slug}`, active: '/catalog', image: imgs[0],
     jsonData: calcData([raw], settings, series),
+  });
+}
+
+/* ------------------------------------------------------- подбор сочетаний */
+
+function combine(data, query) {
+  const { settings, series, products } = data;
+  const items = products.map((p) => matchItem(p, series));
+  const selected = String(query.m || '').split(',').map((v) => v.trim()).filter(Boolean).slice(0, 4);
+  const usedSeries = series.filter((s) => items.some((it) => it.seriesId === s.id));
+  const body = `
+<section class="page-head wrap">
+  <h1>Подбор сочетаний</h1>
+  <p class="lead">Выберите от двух до четырёх материалов — покажем их вместе и подскажем, сочетаются ли они по светлоте, подтону, рисунку и фактуре.</p>
+</section>
+
+<div class="wrap combine" data-combine>
+  <section class="combo-block">
+    <div class="combo-head">
+      <h2 class="h3">Ваша подборка</h2>
+      <span class="combo-count" id="combo-count"></span>
+      <button class="link-btn" type="button" id="combo-clear" hidden>Очистить</button>
+    </div>
+    <div class="slots" id="combo-slots"></div>
+  </section>
+
+  <section class="combo-block" id="combo-result" aria-live="polite"></section>
+
+  <section class="combo-block" id="combo-suggest" hidden></section>
+
+  <section class="combo-block" id="combo-picker">
+    <div class="combo-head"><h2 class="h3">Материалы</h2><span class="combo-count">Нажмите на плитку, чтобы добавить её в подборку</span></div>
+    <div class="catalog-bar">
+      <input class="search" type="search" id="pick-search" placeholder="Поиск по названию или артикулу" aria-label="Поиск материала">
+      <select id="pick-series" aria-label="Серия">
+        <option value="">Все серии</option>
+        ${usedSeries.map((s) => `<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('')}
+      </select>
+      <select id="pick-sort" aria-label="Порядок">
+        <option value="">Как в каталоге</option>
+        <option value="match">Сначала подходящие</option>
+      </select>
+    </div>
+    <div class="pick-grid" id="pick-grid">
+      ${items.map((it) => `<button type="button" class="pick" data-id="${esc(it.id)}" data-series="${esc(it.seriesId)}" aria-pressed="false"
+        data-search="${esc([it.name, it.article, it.type, it.color, it.finish, it.series].filter(Boolean).join(' ').toLowerCase())}">
+        <span class="pick-img" style="background-color:${esc(it.tone)}">${it.img ? `<img src="${esc(it.img)}" alt="" loading="lazy">` : ''}<span class="pick-check" aria-hidden="true"></span></span>
+        <span class="pick-name">${esc(it.name)}</span>
+        <span class="pick-meta">${esc([it.type, it.finish].filter(Boolean).join(' · '))}</span>
+        <span class="fit" data-fit hidden></span>
+      </button>`).join('')}
+    </div>
+    <p class="empty" id="pick-empty" hidden>По этому запросу материалов нет.</p>
+  </section>
+  <noscript><p class="note">Для подбора сочетаний включите JavaScript в браузере.</p></noscript>
+</div>`;
+  return page({
+    base: data.base, settings, body, title: 'Подбор сочетаний', path: '/combine', active: '/combine',
+    description: 'Подбор сочетаний материалов VISTONE: выберите несколько плит и посмотрите, сочетаются ли они по светлоте, подтону, рисунку и фактуре.',
+    jsonData: { items, selected, wa: (primaryManager(settings) || {}).whatsapp || '' },
+    scripts: ['match.js', 'combine.js'],
   });
 }
 
@@ -581,4 +709,4 @@ function notFound(data) {
   return page({ base: data.base, settings: data.settings, body, title: 'Страница не найдена' });
 }
 
-module.exports = { home, catalog, product, calculator, stock, designers, developers, contacts, notFound };
+module.exports = { home, catalog, product, calculator, combine, stock, designers, developers, contacts, notFound };

@@ -11,6 +11,8 @@ process.env.DATA_DIR = DATA;
 process.env.ADMIN_PASSWORD = 'correct-horse-9';
 
 const { createApp } = require('../server');
+const { deltaE, hexToLab } = require('../public/js/match');
+const { hasSharp } = require('../src/palette');
 
 let base;
 let server;
@@ -31,7 +33,9 @@ async function call(method, url, body, opts = {}) {
 }
 
 test.before(async () => {
-  server = createApp().listen(0);
+  const app = createApp();
+  await app.locals.ready;
+  server = app.listen(0);
   await new Promise((r) => server.once('listening', r));
   base = `http://127.0.0.1:${server.address().port}`;
 });
@@ -41,7 +45,7 @@ test.after(() => {
 });
 
 test('публичные страницы открываются', async () => {
-  for (const url of ['/', '/catalog', '/calculator', '/stock', '/designers', '/developers', '/contacts', '/sitemap.xml', '/robots.txt']) {
+  for (const url of ['/', '/catalog', '/combine', '/calculator', '/stock', '/designers', '/developers', '/contacts', '/sitemap.xml', '/robots.txt']) {
     const r = await call('GET', url, undefined, { auth: false });
     assert.equal(r.status, 200, url);
   }
@@ -58,6 +62,24 @@ test('карточка коллекции содержит поля из ТЗ', 
   }
   const missing = await call('GET', '/catalog/net-takoy', undefined, { auth: false });
   assert.equal(missing.status, 404);
+});
+
+test('подбор сочетаний: страница, цвета по фото, блок в карточке', async () => {
+  const r = await call('GET', '/combine?m=salorant,light-tan', undefined, { auth: false });
+  assert.equal(r.status, 200);
+  assert.equal((r.text.match(/class="pick"/g) || []).length, 54);
+  assert.match(r.text, /\/assets\/js\/match\.js/);
+  const data = JSON.parse(r.text.match(/<script type="application\/json" id="page-data">([\s\S]*?)<\/script>/)[1]);
+  assert.deepEqual(data.selected, ['salorant', 'light-tan']);
+  const salorant = data.items.find((x) => x.slug === 'salorant');
+  assert.match(salorant.tone, /^#[0-9a-f]{6}$/);
+  assert.ok(salorant.tone < '#606060', `тон чёрного мрамора по фото: ${salorant.tone}`);
+
+  const page = await call('GET', '/catalog/salorant', undefined, { auth: false });
+  assert.match(page.text, /С чем сочетается/);
+  assert.match(page.text, /href="\/combine\?m=salorant,[a-z0-9-]+"/);
+  const home = await call('GET', '/', undefined, { auth: false });
+  assert.match(home.text, /Подбор сочетаний/);
 });
 
 test('API админки закрыто без входа', async () => {
@@ -122,6 +144,38 @@ test('новая коллекция: создание, адрес страниц
   assert.equal(d.status, 200);
   const gone = await call('GET', '/catalog/nero-test', undefined, { auth: false });
   assert.equal(gone.status, 404);
+});
+
+test('тон и рисунок для подбора: проверка ввода, цвет по новому фото', { skip: !hasSharp && 'sharp не установлен' }, async () => {
+  const st = await call('GET', '/api/admin/state');
+  const p = st.json.products.find((x) => x.slug === 'terrazzo');
+  assert.match(p.palette.tone, /^#[0-9a-f]{6}$/);
+  assert.equal(p.palette.image, p.images[0]);
+
+  const bad = await call('PUT', `/api/admin/products/${p.id}`, { tone: 'red', pattern: 'weird' });
+  assert.equal(bad.json.product.tone, '');
+  assert.equal(bad.json.product.pattern, '');
+  const ok = await call('PUT', `/api/admin/products/${p.id}`, { tone: '#ABCDEF', pattern: 'calm' });
+  assert.equal(ok.json.product.tone, '#abcdef');
+  assert.equal(ok.json.product.pattern, 'calm');
+  const page = await call('GET', '/combine', undefined, { auth: false });
+  assert.match(page.text, /"slug":"terrazzo"[^}]*"tone":"#abcdef"[^}]*"pattern":"calm"/);
+  await call('PUT', `/api/admin/products/${p.id}`, { tone: '', pattern: '' });
+
+  // новое главное фото — цвет пересчитывается при сохранении
+  const color = '#2e4a6b';
+  const png = await require('sharp')({ create: { width: 40, height: 40, channels: 3, background: color } }).png().toBuffer();
+  const fd = new FormData();
+  fd.append('files', new Blob([png], { type: 'image/png' }), 'blue.png');
+  const up = await call('POST', '/api/admin/upload', fd);
+  const near = (hex) => deltaE(hexToLab(hex), hexToLab(color)) < 2;
+  const preview = await call('POST', '/api/admin/palette', { url: up.json.urls[0] });
+  assert.ok(near(preview.json.palette.tone), preview.json.palette.tone);
+  const c = await call('POST', '/api/admin/products', { name: 'Тест цвета', images: up.json.urls });
+  assert.ok(near(c.json.product.palette.tone), c.json.product.palette.tone);
+  const removed = await call('PUT', `/api/admin/products/${c.json.product.id}`, { images: [] });
+  assert.equal(removed.json.product.palette, undefined);
+  await call('DELETE', `/api/admin/products/${c.json.product.id}`);
 });
 
 test('без названия коллекцию не сохранить', async () => {
