@@ -148,15 +148,18 @@
       });
     });
     // Плюсы — без повторов, чтобы не перечислять одно и то же для каждой пары.
-    var goods = [];
-    g.pairs.forEach(function (p) {
-      p.result.notes.forEach(function (n) {
-        if (n.kind === 'good' && !seen[n.text] && goods.length < 3) {
-          seen[n.text] = 1;
-          goods.push({ kind: n.kind, text: p.a.name + ' + ' + p.b.name + ': ' + n.text });
-        }
+    // Берутся по очереди из разных пар: первый плюс каждой пары, потом второй и т. д.
+    var goods = [], lists = g.pairs.map(function (p) {
+      return p.result.notes.filter(function (n) { return n.kind === 'good'; }).map(function (n) {
+        return { kind: n.kind, text: p.a.name + ' + ' + p.b.name + ': ' + n.text, key: n.text };
       });
     });
+    for (var k = 0; goods.length < 3 && lists.some(function (l) { return l.length > k; }); k++) {
+      lists.forEach(function (l) {
+        var n = l[k];
+        if (n && !seen[n.key] && goods.length < 3) { seen[n.key] = 1; goods.push({ kind: n.kind, text: n.text }); }
+      });
+    }
     var order = { bad: 0, warn: 1, good: 2, info: 3 };
     return list.concat(goods).sort(function (x, y) { return order[x.kind] - order[y.kind]; });
   }
